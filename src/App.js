@@ -1,9 +1,13 @@
 import './App.css';
+import MyComponent from "./MyComponent";
+import {useState} from "react";
 
 function App() {
+  const [isToShow, setIsToShow] = useState(false)
   return (
     <div className="App">
-      Init app
+      <button onClick={() => setIsToShow(true)}>Render MyComponent with try/catch updating state</button>
+      {isToShow && <MyComponent/>}
     </div>
   );
 }
